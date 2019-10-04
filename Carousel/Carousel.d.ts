@@ -7,14 +7,15 @@ export interface CarouselItem {
     desc?: string;
     image?: string;
 }
-interface CarouselProps {
-    list: Array<CarouselItem>;
-    height?: number;
+export interface CarouselProps {
+    afterChange?: (index: number) => void;
     autoPlay?: boolean;
     autoPlaySpeed?: number;
     backgroundPlacement?: string;
-    carouselChanged?: (index: number) => void;
     className?: string;
+    height?: number;
+    id?: string;
+    infinite?: boolean;
+    list: Array<CarouselItem>;
 }
 export declare const Carousel: React.FunctionComponent<CarouselProps>;
-export {};

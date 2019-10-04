@@ -1,13 +1,13 @@
 import * as React from "react";
 import "./image-preview-style.scss";
-interface ImagePreviewProps {
+export interface ImagePreviewProps {
     cropResult?: string;
     previewSrc?: string;
     handleUploadImage: (e: any, cropResult?: string) => void;
     selectButtonText?: string;
     previewClassName?: string;
 }
-interface ImagePreviewState {
+export interface ImagePreviewState {
     cropDataResult: string;
 }
 export declare class ImagePreview extends React.Component<ImagePreviewProps, ImagePreviewState> {
@@ -19,4 +19,3 @@ export declare class ImagePreview extends React.Component<ImagePreviewProps, Ima
     readonly defaultProfileSvg: JSX.Element;
     render(): JSX.Element;
 }
-export {};

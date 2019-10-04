@@ -1,14 +1,15 @@
 import * as React from "react";
-interface RatingProps {
-    initialValue?: any;
-    onChange?: (value: number) => void;
-    tooltipList?: Array<string>;
+export interface RatingProps {
+    className?: string;
+    colors?: [string, string];
+    disabled?: boolean;
     iconHeight?: number;
     iconWidth?: number;
-    useHollow?: boolean;
-    colors?: Array<string>;
+    id?: string;
+    initialValue?: any;
+    onChange?: (value: number) => void;
     readOnly?: boolean;
-    className?: string;
+    tooltipList?: Array<string>;
+    useHollow?: boolean;
 }
 export declare const Rating: React.FunctionComponent<RatingProps>;
-export {};

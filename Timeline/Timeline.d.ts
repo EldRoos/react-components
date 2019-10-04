@@ -5,11 +5,13 @@ export interface TimelineListItem {
     time: string;
     desc?: string;
 }
-interface TimelineProps {
-    list: Array<TimelineListItem>;
-    direction?: string;
-    onClick?: (index: number) => void;
+declare type TimelineDirection = "vertical" | "horizontal";
+export interface TimelineProps {
     className?: string;
+    direction?: TimelineDirection;
+    id?: string;
+    list: Array<TimelineListItem>;
+    onClick?: (index: number) => void;
 }
 export declare const Timeline: React.FunctionComponent<TimelineProps>;
 export {};

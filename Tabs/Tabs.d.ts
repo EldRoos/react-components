@@ -4,11 +4,12 @@ export interface TabsListItem {
     text: string;
     disabled?: boolean;
 }
-interface TabsProps {
-    list: Array<TabsListItem>;
+export interface TabsProps {
     activeTab: number;
-    onClick?: (index: number) => any;
     className?: string;
+    id?: string;
+    list: Array<TabsListItem>;
+    onClick: (index: number) => any;
 }
-export declare const Tabs: React.FunctionComponent<TabsProps>;
-export {};
+declare const Tabs: React.FunctionComponent<TabsProps>;
+export { Tabs };

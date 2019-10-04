@@ -8,18 +8,20 @@ interface TooltipState {
     toggle: boolean;
 }
 export interface TooltipProps {
-    title?: string;
+    className?: string;
+    customSvg?: any;
+    id?: string;
     message?: string;
     messageGroup?: Array<TooltipMessageGroupItem>;
+    onClick?: (event?: React.MouseEvent<HTMLDivElement>) => void;
     position?: string;
-    customSvg?: any;
-    width?: number;
     theme?: string;
-    className?: string;
+    title?: string;
     triggerOnHover?: boolean;
+    width?: number;
 }
 export declare class Tooltip extends React.Component<TooltipProps, TooltipState> {
-    constructor(props: any);
+    constructor(props: TooltipProps);
     /**
      * Forces the tooltip to dismiss
      * @param {React.MouseEvent<HTMLDivElement>} e Mouse event
@@ -28,7 +30,7 @@ export declare class Tooltip extends React.Component<TooltipProps, TooltipState>
     /** Forces the tooltip to show */
     forceShow(): void;
     isPositioned(search: string): boolean;
-    toggleTooltip(state?: boolean): void;
+    toggleTooltip(state?: boolean, e?: React.MouseEvent<HTMLDivElement>): void;
     render(): JSX.Element;
 }
 export {};

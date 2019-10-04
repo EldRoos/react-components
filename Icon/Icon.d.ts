@@ -1,10 +1,11 @@
 import * as React from "react";
 import "./icon-style.scss";
 export interface IconProps {
-    src: any;
     className?: string;
-    title?: string;
+    id?: string;
+    onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
     size?: number;
-    onClick?: (event: any) => void;
+    src: JSX.Element;
+    title?: string;
 }
 export declare const Icon: React.FunctionComponent<IconProps>;

@@ -18,16 +18,16 @@ declare const enum TimerStepperContext {
     Minutes = "MINUTES",
     Dayperiod = "DAYPERIOD"
 }
-interface TimepickerProps {
-    value: TimepickerValue;
-    onChange: (value: TimepickerValue) => any;
-    name: string;
+export interface TimepickerProps {
     className?: string;
+    id?: string;
+    name: string;
+    onChange: (value: TimepickerValue) => void;
+    value: TimepickerValue;
 }
-export declare class Timepicker extends React.Component<TimepickerProps, any> {
-    constructor(props: any);
+declare class Timepicker extends React.Component<TimepickerProps> {
     handleClick(context: TimerStepperContext, type: TimerStepperTypes, currentValue: TimepickerValue): TimepickerValue;
     handleChange(context: TimerStepperContext, value: number, currentValue: TimepickerValue): TimepickerValue;
     render(): JSX.Element;
 }
-export {};
+export { Timepicker };

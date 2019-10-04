@@ -1,73 +1,26 @@
 import * as React from "react";
 import "./notification-style.scss";
-/** An action button in the notification */
+declare type NotificationStyle = "slide-in" | "bar";
+declare type NotificationPosition = "bottom-left" | "bottom-right" | "top-left" | "top-right" | "top" | "bottom";
+declare type NotificationTheme = "purple" | "primary" | "danger" | "success" | "warning" | "inverted";
 export interface NotificationAction {
-    /** The label of the button */
     text: string;
-    /** The action callback to be triggered when the button is clicked */
     action: () => void;
 }
 export interface NotificationProps {
-    /** Notification toggler. `Compulsory` */
-    toggle: boolean;
-    /**
-     * The style of the notification.
-     *
-     * Supported styles: `slide-in`, `bar`
-     * @default `slide-in`
-     */
-    style?: string;
-    /**
-     * The position of the notification.
-     *
-     * Supported styles:
-     * - With `slide-in` style: `bottom-left`, `bottom-right`, `top-left`, `top-right`
-     * - With `bar` style: `top`, `bottom`
-     * @default
-     * - `bottom-left` for `slide-in` style
-     * - `top` for `bar` style
-     */
-    position?: string;
-    /** The title of the notification */
-    title?: string;
-    /** The message of the notification */
-    message?: string;
-    /**
-     * Should the notification be dismissable with and `X` button
-     * @default false
-     */
-    dismissable?: boolean;
-    /**
-     * The dismiss timeout in milliseconds
-     * @default 5000ms
-     */
-    dismissTimeout?: number;
-    /**
-     * Action buttons to be displayed in the notification.
-     * @note Maximum number of actions is `2`
-     * @see `NotificationAction` Interface
-     */
     actions?: Array<NotificationAction>;
-    /**
-     * Should the notification persist without a timer to dismiss it
-     * @default false
-     */
-    persist?: boolean;
-    /**
-     * The theme of the notification.
-     *
-     * Supported themes: `purple`, `primary`, `danger`, `success`, `warning`, `inverted`
-     * @default `purple`
-     */
-    theme?: string;
-    /** Callback to be triggered when the notification is clicked. */
-    onClick?: () => void;
-    /** Callback to be triggered when the notification is dismissed. `Compulsory` */
-    onDismiss: () => void;
-    /** HTML/React elements to be rendered inside the notification */
-    children?: React.ReactNode;
-    /** Custom class name */
     className?: string;
+    dismissable?: boolean;
+    dismissTimeout?: number;
+    message?: string;
+    onClick?: (event?: React.MouseEvent<HTMLDivElement>) => void;
+    onDismiss: () => void;
+    persist?: boolean;
+    position?: NotificationPosition;
+    style?: NotificationStyle;
+    theme?: NotificationTheme;
+    title?: string;
+    toggle: boolean;
 }
 export declare class Notification extends React.Component<NotificationProps> {
     timerRef: number;
@@ -103,3 +56,4 @@ export declare class Notification extends React.Component<NotificationProps> {
      */
     private getPositionClass;
 }
+export {};

@@ -1,17 +1,18 @@
 import * as React from "react";
 import "./pagination-style.scss";
 export interface PaginationProps {
-    value: number;
-    size: number;
-    offset?: number;
-    useTextNav?: boolean;
-    useFirstAndLast?: boolean;
-    nextText?: string;
-    previousText?: string;
-    firstText?: string;
-    lastText?: string;
     className?: string;
-    useDotNav?: boolean;
+    firstText?: string;
+    id?: string;
+    lastText?: string;
+    nextText?: string;
+    offset?: number;
     onChange?: (value: number) => void;
+    previousText?: string;
+    size: number;
+    useDotNav?: boolean;
+    useFirstAndLast?: boolean;
+    useTextNav?: boolean;
+    value: number;
 }
 export declare const Pagination: React.FunctionComponent<PaginationProps>;

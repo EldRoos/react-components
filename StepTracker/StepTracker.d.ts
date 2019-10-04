@@ -1,12 +1,15 @@
 import * as React from "react";
 import "./step-tracker-style.scss";
+export declare type StepTrackerLabelPosition = "right" | "left" | "bottom" | "top";
+export declare type StepTrackerLabelOrientation = "horizontal" | "vertical";
 export interface StepTrackerProps {
-    step: number;
+    className?: string;
+    id?: string;
+    labelPosition?: StepTrackerLabelPosition;
     list: Array<string>;
     onClick?: (index: number) => void;
-    className?: string;
-    labelPosition?: string;
+    orientation?: StepTrackerLabelOrientation;
+    step: number;
     useNumbers?: boolean;
-    orientation?: string;
 }
 export declare const StepTracker: React.FunctionComponent<StepTrackerProps>;

@@ -1,9 +1,9 @@
 import * as React from "react";
 import "./inline-link-style.scss";
-interface InlineLinkProps {
-    onClick?: () => void;
-    className?: string;
+export interface InlineLinkProps {
     children?: any;
+    className?: string;
+    id?: string;
+    onClick?: () => void;
 }
-export declare const InlineLink: React.FunctionComponent<InlineLinkProps>;
-export {};
+export declare const InlineLink: React.NamedExoticComponent<InlineLinkProps>;

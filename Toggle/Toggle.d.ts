@@ -1,11 +1,13 @@
 import * as React from "react";
-import "./toggle-style.scss";
+import "./toggle.scss";
 export interface ToggleProps {
-    name: string;
-    label?: string;
-    value: boolean;
-    onChange: (event: any) => void;
     className?: string;
+    disabled?: boolean;
+    id?: string;
+    label?: string;
+    name: string;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     reference?: React.RefObject<any>;
+    value: boolean;
 }
 export declare const Toggle: React.FunctionComponent<ToggleProps>;

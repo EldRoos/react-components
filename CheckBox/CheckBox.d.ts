@@ -1,16 +1,18 @@
 import * as React from "react";
 import "./check-box-style.scss";
 export interface CheckBoxProps {
-    name: string;
     checked: boolean;
-    onChange: (event: any) => void;
     className?: string;
-    label?: string;
-    topLabel?: string;
-    disabled?: boolean;
-    inline?: boolean;
+    condensed?: boolean;
     description?: string;
-    error?: string;
-    reference?: React.RefObject<any>;
+    disabled?: boolean;
+    id?: string;
+    inline?: boolean;
+    label: string;
+    name: string;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    reference?: React.RefObject<HTMLInputElement>;
+    topLabel?: string;
 }
-export declare const CheckBox: React.FunctionComponent<CheckBoxProps>;
+declare const CheckBox: React.FunctionComponent<CheckBoxProps>;
+export { CheckBox };

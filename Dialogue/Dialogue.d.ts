@@ -1,23 +1,18 @@
 import * as React from "react";
 import "./dialogue-style.scss";
-interface DialogueProps {
-    toggle: boolean;
-    header?: string;
-    desc?: string;
-    primaryBtn?: string;
-    secondaryBtn?: string;
-    primaryAction?: () => void;
-    secondaryAction?: () => void;
+export interface DialogueProps {
     className?: string;
+    desc?: string;
+    enableBackdropDismiss?: boolean;
+    enableCloseButton?: boolean;
+    header?: string;
+    id?: string;
+    onDismiss?: (event: React.MouseEvent<HTMLDivElement>) => void;
+    primaryAction?: () => void;
+    primaryBtn?: string;
+    secondaryAction?: () => void;
+    secondaryBtn?: string;
+    toggle: boolean;
 }
-interface DialogueState {
-    open: boolean;
-    close: boolean;
-}
-export declare class Dialogue extends React.Component<DialogueProps, DialogueState> {
-    constructor(props: DialogueProps);
-    componentDidMount(): void;
-    componentDidUpdate(prevProps: DialogueProps): void;
-    render(): JSX.Element;
-}
-export {};
+declare const Dialogue: React.FunctionComponent<DialogueProps>;
+export { Dialogue };

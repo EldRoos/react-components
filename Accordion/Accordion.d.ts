@@ -1,24 +1,25 @@
 import * as React from "react";
 import "./accordion-style.scss";
-export interface AccordionText {
+export declare type AccordionIconRotation = "deg-180" | "deg-180-counter" | "deg-90" | "deg-90-counter";
+export interface AccordionContent {
     title?: string;
     desc?: string;
 }
+export declare type AccordionContentType = AccordionContent | Array<AccordionContent> | React.ReactNode;
 export interface AccrodionListItem {
-    category: string;
+    header: string;
     subHeaderText?: string;
-    text?: AccordionText | Array<AccordionText>;
+    content?: AccordionContentType;
 }
-interface AccordionProps {
-    list: Array<AccrodionListItem>;
+export interface AccordionProps {
     className?: string;
+    customIcon?: JSX.Element;
+    customIconExpanded?: JSX.Element;
+    iconPosition?: "left" | "right";
+    iconRotation?: AccordionIconRotation;
+    id?: string;
+    list: Array<AccrodionListItem>;
+    alternative?: boolean;
 }
-interface AccordionState {
-    active: number;
-}
-export declare class Accordion extends React.Component<AccordionProps, AccordionState> {
-    constructor(props: AccordionProps);
-    toggle(i: number): void;
-    render(): JSX.Element;
-}
-export {};
+declare const Accordion: React.FunctionComponent<AccordionProps>;
+export { Accordion };

@@ -1,21 +1,22 @@
 import * as React from "react";
 import "./radio-group-style.scss";
 export interface RadioListModel {
-    value: any;
-    group: string;
-    label: string;
     description?: string;
     disabled?: boolean;
+    group: string;
+    label: string;
+    value: any;
 }
 export interface RadioGroupProps {
-    list: Array<RadioListModel>;
-    onChange: (value: any) => void;
-    value: any;
-    name?: string;
     className?: string;
-    label?: string;
-    error?: string;
-    inline?: boolean;
+    condensed?: boolean;
     disableAll?: boolean;
+    id?: string;
+    inline?: boolean;
+    label?: string;
+    list: Array<RadioListModel>;
+    name?: string;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    value: any;
 }
 export declare const RadioGroup: React.FunctionComponent<RadioGroupProps>;
