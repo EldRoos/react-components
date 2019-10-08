@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./dropdown-style.scss";
-export interface DropdownItem {
-    value: any;
+export interface DropdownItem<T = any> {
+    value: T;
     label: string;
 }
 export declare type DropdownChangeEvent = DropdownItem | Array<DropdownItem> | React.ChangeEvent<HTMLSelectElement>;

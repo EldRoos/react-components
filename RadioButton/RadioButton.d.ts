@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./radio-button-style.scss";
-export interface RadioButtonProps {
+export interface RadioButtonProps<T = any> {
     className?: string;
     condensed?: boolean;
     description?: string;
@@ -10,11 +10,11 @@ export interface RadioButtonProps {
     inline?: boolean;
     label: string;
     name: string;
-    onChange: (value: any, e?: React.ChangeEvent<HTMLInputElement>) => void;
-    radioValue: any;
+    onChange: (value: T, e?: React.ChangeEvent<HTMLInputElement>) => void;
+    radioValue: T;
     reference?: React.RefObject<HTMLInputElement>;
     topLabel?: string;
-    value: any;
+    value: T;
 }
 declare const RadioButton: React.FunctionComponent<RadioButtonProps>;
 export { RadioButton };

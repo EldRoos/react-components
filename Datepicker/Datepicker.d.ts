@@ -15,7 +15,7 @@ export interface DatepickerProps {
     minDate?: Date;
     name: string;
     onChange: (value: Date) => void;
-    placeHolder?: string;
+    placeholder?: string;
     showLeadingZeros?: boolean;
     value: Date;
 }

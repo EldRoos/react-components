@@ -16,7 +16,7 @@ export interface TextAreaProps {
     onKeyDown?: (event: React.KeyboardEvent<HTMLTextAreaElement>) => void;
     onKeyPress?: (event: React.KeyboardEvent<HTMLTextAreaElement>) => void;
     onKeyUp?: (event: React.KeyboardEvent<HTMLTextAreaElement>) => void;
-    placeHolder?: string;
+    placeholder?: string;
     readonly?: boolean;
     reference?: React.RefObject<HTMLTextAreaElement>;
     resizable?: boolean;

@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./inline-link-style.scss";
 export interface InlineLinkProps {
-    children?: any;
+    children?: React.ReactNode;
     className?: string;
     id?: string;
     onClick?: () => void;

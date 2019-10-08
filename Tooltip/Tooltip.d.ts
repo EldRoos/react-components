@@ -7,15 +7,17 @@ export interface TooltipMessageGroupItem {
 interface TooltipState {
     toggle: boolean;
 }
+export declare type TooltipTheme = "default" | "light" | "primary" | "warning" | "success" | "danger" | "purple";
+export declare type TooltipPosition = "top" | "bottom" | "left" | "right" | "top-right" | "top-left" | "bottom-right" | "bottom-left" | "left-top" | "left-bottom" | "right-top" | "right-bottom";
 export interface TooltipProps {
     className?: string;
-    customSvg?: any;
+    customSvg?: React.ReactNode;
     id?: string;
     message?: string;
     messageGroup?: Array<TooltipMessageGroupItem>;
     onClick?: (event?: React.MouseEvent<HTMLDivElement>) => void;
-    position?: string;
-    theme?: string;
+    position?: TooltipPosition;
+    theme?: TooltipTheme;
     title?: string;
     triggerOnHover?: boolean;
     width?: number;
