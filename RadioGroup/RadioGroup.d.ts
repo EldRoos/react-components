@@ -3,7 +3,6 @@ import "./radio-group-style.scss";
 export interface RadioListModel<T = any> {
     description?: string;
     disabled?: boolean;
-    group: string;
     label: string;
     value: T;
 }
@@ -15,7 +14,7 @@ export interface RadioGroupProps<T = any> {
     inline?: boolean;
     label?: string;
     list: Array<RadioListModel<T>>;
-    name?: string;
+    name: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     value: T;
 }
